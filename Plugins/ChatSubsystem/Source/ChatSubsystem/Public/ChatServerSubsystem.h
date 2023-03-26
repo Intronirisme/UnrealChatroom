@@ -28,6 +28,10 @@ public:
 
 private:
 
+	void AcceptConnections();
+
 	TUniquePtr<FSocket> _chatSocket;
+	TArray<FSocket*> _clientSockets;
 	FIPv4Endpoint _serverEndPoint;
+	FTimerHandle _listenerHandle;
 };
